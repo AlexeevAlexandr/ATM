@@ -54,7 +54,7 @@ public class Tests {
     public void test_welcome() throws Exception {
         this
             .mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
-            .andExpect(content().string(containsString("Welcome to RestTemplate Example.")));
+            .andExpect(content().string(containsString("Welcome page")));
     }
 
     @Test

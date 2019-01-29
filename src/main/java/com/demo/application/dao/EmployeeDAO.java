@@ -10,10 +10,10 @@ public class EmployeeDAO {
     private static final Map<String, Employee> empMap = new HashMap<>();
 
     static {
-        initEmps();
+        initEmployee();
     }
 
-    private static void initEmps() {
+    private static void initEmployee() {
         Employee emp1 = new Employee("E01", "Smith", "Clerk");
         Employee emp2 = new Employee("E02", "Allen", "Salesman");
         Employee emp3 = new Employee("E03", "Jones", "Manager");
@@ -45,5 +45,4 @@ public class EmployeeDAO {
         Collection<Employee> c = empMap.values();
         return new ArrayList<>(c);
     }
-
 }

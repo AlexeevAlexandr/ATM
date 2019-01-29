@@ -5,7 +5,6 @@ import com.demo.application.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -21,7 +20,7 @@ public class MainRESTController {
     @RequestMapping("/")
     @ResponseBody
     public String welcome() {
-        return "Welcome to RestTemplate Example.";
+        return "Welcome page";
     }
 
     @RequestMapping(value = "/employees", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
@@ -46,9 +45,7 @@ public class MainRESTController {
     @RequestMapping(value = "/employee", method = RequestMethod.PUT, produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
     @ResponseBody
     public Employee updateEmployee(@RequestBody Employee emp) {
-
         System.out.println("(Service Side) Editing employee: " + emp.getEmpNo());
-
         return employeeDAO.updateEmployee(emp);
     }
 
